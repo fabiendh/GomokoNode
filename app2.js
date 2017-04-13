@@ -1,3 +1,22 @@
+var Client = require('node-rest-client').Client;
+var api = new Client();
+var $ = require('jQuery');
+
+
+
+config = {
+  "score_team1": {
+    innerHTML: ""
+  },
+  "score_team2": {
+    innerHTML: ""
+  }
+};
+
+    document.getElementById = function(id) {
+      return config[id];
+    }
+
 
 (function($) {
 
@@ -694,60 +713,60 @@ callWS = function() {
                   if ((board[index] === 1 && board[index+1] === 2 && board[index+2] === 2 && board[index+3] === 1)) {
                     board[index+1] = 0;
                     board[index+2] = 0;
-                    document.getElementById(index+1).removeAttribute("class");
-                    document.getElementById(index+2).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   if ((board[index] === 1 && board[index-1] === 2 && board[index-2] === 2 && board[index-3] === 1)) {
                     board[index-1] = 0;
                     board[index-2] = 0;
-                    document.getElementById(index-1).removeAttribute("class");
-                    document.getElementById(index-2).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   // Vertical
                   if ((board[index] === 1 && board[index+19] === 2 && board[index+38] === 2 && board[index+57] === 1)) {
                     board[index+19] = 0;
                     board[index+38] = 0;
-                    document.getElementById(index+19).removeAttribute("class");
-                    document.getElementById(index+38).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   if ((board[index] === 1 && board[index-19] === 2 && board[index-38] === 2 && board[index-57] === 1)) {
                     board[index-19] = 0;
                     board[index-38] = 0;
-                    document.getElementById(index-19).removeAttribute("class");
-                    document.getElementById(index-38).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   // Diagonal /
                   if ((board[index] === 1 && board[index+18] === 2 && board[index+36] === 2 && board[index+54] === 1)) {
                     board[index+18] = 0;
                     board[index+36] = 0;
-                    document.getElementById(index+18).removeAttribute("class");
-                    document.getElementById(index+36).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   if ((board[index] === 1 && board[index-18] === 2 && board[index-36] === 2 && board[index-54] === 1)) {
                     board[index-18] = 0;
                     board[index-36] = 0;
-                    document.getElementById(index-18).removeAttribute("class");
-                    document.getElementById(index-36).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   // Diagonal \
                   if ((board[index] === 1 && board[index+20] === 2 && board[index+40] === 2 && board[index+60] === 1)) {
                     board[index+20] = 0;
                     board[index+40] = 0;
-                    document.getElementById(index+20).removeAttribute("class");
-                    document.getElementById(index+40).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
                   if ((board[index] === 1 && board[index-20] === 2 && board[index-40] === 2 && board[index-60] === 1)) {
                     board[index-20] = 0;
                     board[index-40] = 0;
-                    document.getElementById(index-20).removeAttribute("class");
-                    document.getElementById(index-40).removeAttribute("class");
+                    
+                    
                     score_team2.innerHTML=parseInt(score_team2.innerHTML)+2;
                   }
             }
@@ -761,60 +780,60 @@ callWS = function() {
                   if ((board[index] === 2 && board[index+1] === 1 && board[index+2] === 1 && board[index+3] === 2)){
                     board[index+1] = 0;
                     board[index+2] = 0;
-                    document.getElementById(index+1).removeAttribute("class");
-                    document.getElementById(index+2).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   if ((board[index] === 2 && board[index-1] === 1 && board[index-2] === 1 && board[index-3] === 2)){
                     board[index-1] = 0;
                     board[index-2] = 0;
-                    document.getElementById(index-1).removeAttribute("class");
-                    document.getElementById(index-2).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   // Vertical
                   if ((board[index] === 2 && board[index+19] === 1 && board[index+38] === 1 && board[index+57] === 2)) {
                     board[index+19] = 0;
                     board[index+38] = 0;
-                    document.getElementById(index+19).removeAttribute("class");
-                    document.getElementById(index+38).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   if ((board[index] === 2 && board[index-19] === 1 && board[index-38] === 1 && board[index-57] === 2)) {
                     board[index-19] = 0;
                     board[index-38] = 0;
-                    document.getElementById(index-19).removeAttribute("class");
-                    document.getElementById(index-38).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   // Diagonal /
                   if ((board[index] === 2 && board[index+18] === 1 && board[index+36] === 1 && board[index+54] === 2)) {
                     board[index+18] = 0;
                     board[index+36] = 0;
-                    document.getElementById(index+18).removeAttribute("class");
-                    document.getElementById(index+36).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   if ((board[index] === 2 && board[index-18] === 1 && board[index-36] === 1 && board[index-54] === 2)) {
                     board[index-18] = 0;
                     board[index-36] = 0;
-                    document.getElementById(index-18).removeAttribute("class");
-                    document.getElementById(index-36).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   // Diagonal \
                   if ((board[index] === 2 && board[index+20] === 1 && board[index+40] === 1 && board[index+60] === 2)) {
                     board[index+20] = 0;
                     board[index+40] = 0;
-                    document.getElementById(index+20).removeAttribute("class");
-                    document.getElementById(index+40).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
                   if ((board[index] === 2 && board[index-20] === 1 && board[index-40] === 1 && board[index-60] === 2)) {
                     board[index-20] = 0;
                     board[index-40] = 0;
-                    document.getElementById(index-20).removeAttribute("class");
-                    document.getElementById(index-40).removeAttribute("class");
+                    
+                    
                     score_team1.innerHTML=parseInt(score_team1.innerHTML)+2;
                   }
             }
